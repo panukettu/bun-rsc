@@ -1,0 +1,61 @@
+{
+  "name": "@pkxp/react",
+  "private": false,
+  "description": "React is a JavaScript library for building user interfaces.",
+  "keywords": [
+    "react"
+  ],
+  "version": "0.0.7",
+  "homepage": "https://reactjs.org/",
+  "bugs": "https://github.com/facebook/react/issues",
+  "license": "MIT",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "esm/",
+    "types/",
+    "jsx-runtime.js",
+    "jsx-dev-runtime.js",
+    "react.react-server.js"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "browser": "./index.js",
+      "node": "./index.js",
+      "bun": "./react.react-server.js",
+      "default": "./index.js"
+    },
+    "./server": "./react.react-server.js",
+    "./package.json": "./package.json",
+    "./jsx-runtime": {
+      "default": "./jsx-runtime.js"
+    },
+    "./jsx-dev-runtime": {
+      "default": "./jsx-dev-runtime.js"
+    },
+    "./src/*": "./src/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/panukettu/@pkxp-react.git",
+    "directory": "packages/react"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "loose-envify": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/prop-types": "*",
+    "@types/scheduler": "*",
+    "csstype": "^3.0.2"
+  },
+  "browserify": {
+    "transform": [
+      "loose-envify"
+    ]
+  }
+}

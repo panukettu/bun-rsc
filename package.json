@@ -1,0 +1,92 @@
+{
+  "name": "@pkxp/bun-rsc",
+  "type": "module",
+  "version": "0.1.22",
+  "files": [
+    "dist",
+    "package.json"
+  ],
+  "bin": {
+    "@pkxp/bun-rsc": "./dist/server/bun.start.js"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    "./type-extensions": {
+      "types": {
+        "default": "./dist/client/type-extensions.d.ts"
+      }
+    },
+    "./bun-start": {
+      "bun": "./dist/server/bun.start.js"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "default": "./dist/server/index.js",
+      "module": "./dist/server/index.js"
+    },
+    "./server-entry": {
+      "module": "./dist/server/server-entry.js",
+      "default": "./dist/server/server-entry.js"
+    },
+    "./server/*": {
+      "types": "./dist/server/*.d.ts",
+      "default": "./dist/server/*.js",
+      "module": "./dist/server/*.js"
+    },
+    "./types": {
+      "default": "./dist/client/types.d.ts"
+    },
+    "./*": {
+      "types": {
+        "default": "./dist/client/*.d.ts"
+      },
+      "browser": "./dist/client/*.js",
+      "default": "./dist/client/*.js"
+    },
+    "./dist/*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "dev": "WATCH=true bun --bun run --smol build.ts",
+    "prod": "bun --bun run build.ts",
+    "rel": "pnpm publish --access public",
+    "prepack": "rm -rf dist && bun format && bun prod",
+    "format": "bunx @biomejs/biome check --apply src"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.5.3",
+    "@types/bun": "^1.0.5",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@types/scheduler": "^0.16.8",
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.3",
+    "hono": "^3.12.8",
+    "postcss": "^8.4.35",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.0.0",
+    "tailwindcss": "^3.4.1",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  },
+  "trustedDependencies": [
+    "postcss-cli"
+  ],
+  "peerDependencies": {
+    "@pkxp/react-scheduler": "0.0.7",
+    "hono": "^3.12.8",
+    "react": "*",
+    "react-dom": "*",
+    "react-server-dom": "*",
+    "globby": "^14.0.1",
+    "tsup": "^8.0.1",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.17",
+    "cssnano": "^6.0.3",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.0.0"
+  }
+}

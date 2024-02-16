@@ -1,0 +1,9 @@
+src
+node_modules
+.vscode
+temp
+vendor
+biome.json
+builds.ts
+index.ts
+.tsup

@@ -1,0 +1,60 @@
+/// <reference types="react/experimental" />
+
+let r;
+if (process.env.NODE_ENV === 'production') {
+	r = require('./esm/react.production.min.js');
+} else {
+	r = require('./esm/react.development.js');
+}
+
+export const {
+	Children,
+	Component,
+	Fragment,
+	Profiler,
+	PureComponent,
+	StrictMode,
+	Suspense,
+	__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,
+	cache,
+	cloneElement,
+	createContext,
+	createElement,
+	createFactory,
+	createRef,
+	experimental_useEffectEvent,
+	experimental_useOptimistic,
+	forwardRef,
+	isValidElement,
+	lazy,
+	memo,
+	startTransition,
+	unstable_Activity,
+	unstable_Cache,
+	unstable_DebugTracingMode,
+	unstable_SuspenseList,
+	unstable_act,
+	unstable_getCacheForType,
+	unstable_getCacheSignal,
+	unstable_postpone,
+	unstable_useCacheRefresh,
+	unstable_useMemoCache,
+	use,
+	useCallback,
+	useContext,
+	useDebugValue,
+	useDeferredValue,
+	useEffect,
+	useId,
+	useImperativeHandle,
+	useInsertionEffect,
+	useLayoutEffect,
+	useMemo,
+	useOptimistic,
+	useReducer,
+	useRef,
+	useState,
+	useSyncExternalStore,
+	useTransition,
+	version,
+} = r;
